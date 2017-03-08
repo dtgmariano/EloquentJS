@@ -42,4 +42,30 @@ function setVarToB(){
 setVarToB();
 console.log(x);
 
-/*Nested scape*/
+/*Nested scape
+*/
+function multiplyAbsolute(number, factor) {
+  function multiply(number){
+    return number * factor;
+  }
+
+  if (number < 0)
+  return multiply(-number);
+  else
+  return multiply(number);
+}
+console.log(multiplyAbsolute(-3,2))
+
+/*The Stack
+  Expects the following output: RangeError: Maximum call stack size exceeded
+*/
+
+function chicken(){
+  return egg();
+}
+
+function egg(){
+  return chicken();
+}
+
+console.log(chicken() + "came first.");
