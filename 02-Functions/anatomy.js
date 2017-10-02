@@ -68,4 +68,23 @@ function egg(){
   return chicken();
 }
 
-console.log(chicken() + "came first.");
+//console.log(chicken() + "came first.");
+
+/*Closure
+*/
+function createFunction(){
+  var local = 100;
+  return function(){return local;};
+}
+
+a = createFunction();
+
+function makeAdder(amount)
+{
+  return function(number) {
+    return number + amount;
+  };
+}
+var addTwo = makeAdder(2);
+b = addTwo(5);
+console.log(b)
